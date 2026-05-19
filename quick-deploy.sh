@@ -9,7 +9,7 @@ set -e
 DEPLOY_PATH="/opt/server-manager"
 APP_URL="http://$(hostname -I | awk '{print $1}')"
 
-echo "🚀 Server Manager - Quick Deploy"
+echo "Server Manager - Quick Deploy"
 echo "================================"
 echo ""
 
@@ -28,7 +28,7 @@ if ! command -v docker-compose &> /dev/null; then
     chmod +x /usr/local/bin/docker-compose
 fi
 
-echo "✓ Docker installed"
+echo "Docker installed"
 echo ""
 
 # Create deploy directory
@@ -58,7 +58,7 @@ REDIS_PASSWORD=$(openssl rand -base64 16)
 
 MAIL_DRIVER=log
 EOF
-    echo "✓ .env created with secure passwords"
+    echo ".env created with secure passwords"
 fi
 
 # Create SSL certificates
@@ -69,7 +69,7 @@ if [ ! -f "docker/certs/cert.pem" ]; then
       -keyout docker/certs/key.pem \
       -out docker/certs/cert.pem \
       -subj "/C=US/ST=State/L=City/O=Organization/CN=$(hostname -I | awk '{print $1}')" -batch
-    echo "✓ SSL certificates created"
+    echo "SSL certificates created"
 fi
 
 # Load environment
@@ -92,7 +92,7 @@ echo "Running database migrations..."
 docker-compose -f docker-compose.prod.yml exec -T app php artisan migrate --force --seed 2>/dev/null || echo "Migrations completed"
 
 echo ""
-echo "✓ Deployment Complete!"
+echo "Deployment Complete!"
 echo ""
 echo "Access your application:"
 echo "  URL: $APP_URL"

@@ -9,6 +9,5 @@
 defineProps({
   title: String,
   value: [String, Number],
-  icon: String,
 })
 </script>

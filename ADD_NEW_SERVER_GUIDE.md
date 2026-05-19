@@ -113,7 +113,7 @@ In your dashboard:
    - Password: Enter your Hostinger root password
    - OR Private Key: Paste contents of `hostinger_key` file
 6. **OS Type**: Select your OS (Ubuntu 22.04, CentOS, etc.)
-7. Click **Test Connection** → Should see "✓ Connected"
+7. Click **Test Connection** → Should see "Connected"
 8. Click **Add Server**
 
 ### Step 6: Configure Firewall on Hostinger Server
@@ -433,7 +433,7 @@ For any Linux server you have SSH access to:
    - **Private Key**: SSH private key content (recommended)
 6. **OS Type**: Ubuntu, CentOS, Debian, etc.
 7. Click **Test Connection**
-8. If successful ✓, click **Add Server**
+8. If successful, click **Add Server**
 
 ---
 
@@ -598,7 +598,7 @@ ssh user@SERVER_IP
 
 ## Best Practices
 
-✅ **DO:**
+DO:
 - Use SSH keys instead of passwords
 - Restrict SSH to specific IPs when possible
 - Change default SSH port from 22 (optional)
@@ -607,7 +607,7 @@ ssh user@SERVER_IP
 - Enable 2FA if provider supports it
 - Monitor logs regularly
 
-❌ **DON'T:**
+DON'T:
 - Share SSH private keys
 - Use password authentication (keys are better)
 - Allow root SSH login in production

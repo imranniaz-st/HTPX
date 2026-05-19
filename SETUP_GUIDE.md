@@ -1,6 +1,6 @@
 # Advanced Server Management System - Complete Setup Guide
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - Docker & Docker Compose (Recommended)
@@ -58,7 +58,7 @@ npm install
 npm run dev
 ```
 
-## 📋 Default Login Credentials
+## Default Login Credentials
 
 | Email | Password | Role |
 |-------|----------|------|
@@ -66,7 +66,7 @@ npm run dev
 | manager@servermanager.local | manager123 | Manager |
 | viewer@servermanager.local | viewer123 | Viewer |
 
-## 🔧 Configuration
+## Configuration
 
 ### Backend (.env)
 
@@ -111,7 +111,7 @@ VITE_PUSHER_SCHEME=http
 VITE_PUSHER_CLUSTER=mt1
 ```
 
-## 🗂️ Project Structure
+## Project Structure
 
 ```
 ServerManager/
@@ -147,45 +147,45 @@ ServerManager/
 └── README.md
 ```
 
-## 📊 Features
+## Features
 
 ### Server Management
-- ✅ Add/remove servers
-- ✅ Real-time status monitoring
-- ✅ SSH-based management
-- ✅ Multiple authentication types
+- Add/remove servers
+- Real-time status monitoring
+- SSH-based management
+- Multiple authentication types
 
 ### Monitoring
-- ✅ CPU, Memory, Disk metrics
-- ✅ Network traffic monitoring
-- ✅ Process count tracking
-- ✅ Load average monitoring
+- CPU, Memory, Disk metrics
+- Network traffic monitoring
+- Process count tracking
+- Load average monitoring
 
 ### Firewall Management
-- ✅ Add/remove firewall rules
-- ✅ Inbound/outbound rules
-- ✅ Enable/disable rules
-- ✅ Protocol management (TCP, UDP, ICMP)
+- Add/remove firewall rules
+- Inbound/outbound rules
+- Enable/disable rules
+- Protocol management (TCP, UDP, ICMP)
 
 ### User Management
-- ✅ Change Linux user passwords
-- ✅ User list per server
-- ✅ Permission management
+- Change Linux user passwords
+- User list per server
+- Permission management
 
 ### Alerting System
-- ✅ Configurable alert rules
-- ✅ Multiple severity levels (Critical, Warning, Info)
-- ✅ Email notifications
-- ✅ Webhook integrations
-- ✅ Real-time alerts
+- Configurable alert rules
+- Multiple severity levels (Critical, Warning, Info)
+- Email notifications
+- Webhook integrations
+- Real-time alerts
 
 ### Dashboard
-- ✅ System overview statistics
-- ✅ Recent alerts
-- ✅ Metric trends
-- ✅ Server status at a glance
+- System overview statistics
+- Recent alerts
+- Metric trends
+- Server status at a glance
 
-## 🔌 API Endpoints
+## API Endpoints
 
 ### Authentication
 ```
@@ -233,7 +233,7 @@ GET    /api/servers/{id}/users
 POST   /api/servers/{id}/users/{username}/change-password
 ```
 
-## 🔐 Security Features
+## Security Features
 
 - JWT Authentication (Sanctum)
 - Role-based access control (Admin, Manager, Viewer)
@@ -243,7 +243,7 @@ POST   /api/servers/{id}/users/{username}/change-password
 - Rate limiting
 - API token expiration
 
-## 🛠️ Development
+## Development
 
 ### Running Tests
 
@@ -278,7 +278,7 @@ php artisan queue:work redis --queue=default
 php artisan queue:work --queue=default
 ```
 
-## 📦 Dependencies
+## Dependencies
 
 ### Backend (Laravel)
 - laravel/framework: 11.0
@@ -294,7 +294,7 @@ php artisan queue:work --queue=default
 - chart.js: 4.4.0
 - tailwindcss: 3.3.0
 
-## 🚢 Deployment
+## Deployment
 
 ### Production Checklist
 
@@ -317,7 +317,7 @@ docker-compose -f docker-compose.yml build
 docker-compose -f docker-compose.yml up -d
 ```
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Backend Issues
 
@@ -350,7 +350,7 @@ php artisan migrate
 - Ensure Vite server is running on port 5173
 - Check for port conflicts
 
-## 📝 Logging
+## Logging
 
 Logs are stored in `backend/storage/logs/`
 
@@ -359,7 +359,7 @@ Logs are stored in `backend/storage/logs/`
 tail -f backend/storage/logs/laravel.log
 ```
 
-## 📞 Support
+## Support
 
 For issues:
 1. Check logs in `storage/logs/`
@@ -368,11 +368,11 @@ For issues:
 4. Check database connection
 5. Review Laravel documentation
 
-## 📄 License
+## License
 
 MIT License - See LICENSE file
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork repository
 2. Create feature branch

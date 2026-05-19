@@ -2,7 +2,7 @@
 
 When you make changes locally, here's how to deploy them to production:
 
-## 📝 Files Created for Syncing
+## Files Created for Syncing
 
 ### 1. **sync-to-server.sh** (Run from your local machine)
 Syncs your local code changes to the server
@@ -12,7 +12,7 @@ Pulls changes and rebuilds containers on the server
 
 ---
 
-## 🚀 Quick Sync Workflow
+## Quick Sync Workflow
 
 ### Option 1: Sync + Auto Rebuild (Fastest)
 
@@ -25,12 +25,12 @@ bash sync-to-server.sh 167.99.13.48 rebuild
 ```
 
 **What it does:**
-1. ✅ Copies backend code to server
-2. ✅ Copies frontend code to server  
-3. ✅ Copies docker configs to server
-4. ✅ Rebuilds all Docker containers
-5. ✅ Runs database migrations
-6. ✅ Tests application is responding
+1. Copies backend code to server
+2. Copies frontend code to server  
+3. Copies docker configs to server
+4. Rebuilds all Docker containers
+5. Runs database migrations
+6. Tests application is responding
 
 **Time:** 3-5 minutes
 
@@ -73,7 +73,7 @@ ssh root@167.99.13.48 "cd /opt/server-manager && docker-compose -f docker-compos
 
 ---
 
-## 📋 What Gets Synced
+## What Gets Synced
 
 ### Backend
 - `backend/app/` - PHP models, controllers, services
@@ -101,7 +101,7 @@ ssh root@167.99.13.48 "cd /opt/server-manager && docker-compose -f docker-compos
 
 ---
 
-## 🔄 Complete Local Development → Production Workflow
+## Complete Local Development → Production Workflow
 
 ### 1. Make Code Changes Locally
 ```bash
@@ -138,7 +138,7 @@ ssh root@167.99.13.48 "cd /opt/server-manager && docker-compose -f docker-compos
 
 ---
 
-## 🔧 Common Sync Scenarios
+## Common Sync Scenarios
 
 ### Scenario 1: Changed PHP Code (Models, Controllers)
 ```bash
@@ -182,7 +182,7 @@ docker-compose -f docker-compose.prod.yml up -d --build
 
 ---
 
-## 📊 Sync Performance
+## Sync Performance
 
 | Operation | Time | Notes |
 |-----------|------|-------|
@@ -238,7 +238,7 @@ docker-compose -f docker-compose.prod.yml exec -T app php artisan migrate:rollba
 
 ---
 
-## 📝 Recommended Workflow
+## Recommended Workflow
 
 ```bash
 # 1. Make changes locally
@@ -255,7 +255,7 @@ bash sync-to-server.sh 167.99.13.48 rebuild
 
 ---
 
-## 🔐 Security Notes
+## Security Notes
 
 - `.env` file is **never** synced (keeps production secrets safe)
 - SSH keys required for syncing (use ssh-copy-id)
@@ -264,7 +264,7 @@ bash sync-to-server.sh 167.99.13.48 rebuild
 
 ---
 
-## 📚 Additional Commands
+## Additional Commands
 
 ### Just Copy Files (No Rebuild)
 ```bash

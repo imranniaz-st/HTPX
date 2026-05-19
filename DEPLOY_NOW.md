@@ -28,19 +28,19 @@ bash /opt/server-manager/quick-deploy.sh
 ```
 
 That's it! The script will:
-- ✅ Check/install Docker & Docker Compose
-- ✅ Create .env with secure passwords
-- ✅ Generate SSL certificates  
-- ✅ Start all services (app, mysql, redis, nginx)
-- ✅ Run database migrations
-- ✅ Display access URL
+- Check/install Docker & Docker Compose
+- Create .env with secure passwords
+- Generate SSL certificates  
+- Start all services (app, mysql, redis, nginx)
+- Run database migrations
+- Display access URL
 
 ## Step 3: Access Your Application
 
 **After deployment completes, you'll see:**
 
 ```
-✓ Deployment Complete!
+Deployment Complete!
 
 Access your application:
   URL: http://167.99.13.48
@@ -144,12 +144,12 @@ docker-compose -f docker-compose.prod.yml ps
 
 ## Next Steps
 
-1. ✅ Open http://167.99.13.48 in browser
-2. ✅ Login with admin/admin123
-3. ✅ Change password immediately
-4. ✅ Add your servers using the guide in ADD_NEW_SERVER_GUIDE.md
-5. ✅ Configure monitoring alerts
-6. ✅ Set up backup strategy
+1. Open http://167.99.13.48 in browser
+2. Login with admin/admin123
+3. Change password immediately
+4. Add your servers using the guide in ADD_NEW_SERVER_GUIDE.md
+5. Configure monitoring alerts
+6. Set up backup strategy
 
 ---
 
@@ -173,4 +173,4 @@ docker-compose -f docker-compose.prod.yml exec -T app php artisan migrate
 
 ---
 
-Ready to deploy? Run the command in Step 1 and 2! 🚀
+Ready to deploy? Run the command in Step 1 and 2!

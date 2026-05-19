@@ -27,15 +27,15 @@ bash deploy.sh 167.99.13.48 main
 
 The deployment script automatically:
 
-✅ Validates SSH connection
-✅ Builds frontend (npm install & npm run build)
-✅ Copies project files to server (`/opt/server-manager`)
-✅ Creates `.env` with secure random passwords
-✅ Generates SSL certificates
-✅ Starts Docker containers
-✅ Runs database migrations
-✅ Seeds default data
-✅ Configures Nginx reverse proxy
+Validates SSH connection
+Builds frontend (npm install & npm run build)
+Copies project files to server (`/opt/server-manager`)
+Creates `.env` with secure random passwords
+Generates SSL certificates
+Starts Docker containers
+Runs database migrations
+Seeds default data
+Configures Nginx reverse proxy
 
 #### 3. Access Your Application
 
@@ -47,7 +47,7 @@ After deployment completes:
 - Email: `admin@servermanager.local`
 - Password: `admin123`
 
-⚠️ **Change password immediately in production!**
+**Change password immediately in production!**
 
 ---
 

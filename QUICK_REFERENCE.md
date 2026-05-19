@@ -1,6 +1,6 @@
 # Quick Reference Guide
 
-## 🚀 Quick Start Commands
+## Quick Start Commands
 
 ### Docker Setup (Recommended)
 ```bash
@@ -27,14 +27,14 @@ npm install
 npm run dev
 ```
 
-## 📊 Default Credentials
+## Default Credentials
 | Role | Email | Password |
 |------|-------|----------|
 | Admin | admin@servermanager.local | admin123 |
 | Manager | manager@servermanager.local | manager123 |
 | Viewer | viewer@servermanager.local | viewer123 |
 
-## 🛠️ Common Tasks
+## Common Tasks
 
 ### Generate SSH Keys
 ```bash
@@ -79,7 +79,7 @@ tail -f backend/storage/logs/laravel.log
 docker-compose logs -f app
 ```
 
-## 🔌 API Endpoints Reference
+## API Endpoints Reference
 
 ### Auth
 ```
@@ -125,7 +125,7 @@ GET /api/servers/{id}/users                    # List users
 POST /api/servers/{id}/users/{username}/change-password # Change password
 ```
 
-## 🐛 Debugging
+## Debugging
 
 ### Backend Issues
 ```bash
@@ -165,7 +165,7 @@ docker-compose restart
 docker-compose build --no-cache
 ```
 
-## 📁 Important Files
+## Important Files
 
 **Backend**
 - `.env` - Configuration
@@ -181,7 +181,7 @@ docker-compose build --no-cache
 - `src/services/api-client.js` - API calls
 - `src/router/index.js` - Routing
 
-## 🔐 Security Checklist
+## Security Checklist
 
 - [ ] Change default passwords
 - [ ] Generate SSH keys
@@ -194,7 +194,7 @@ docker-compose build --no-cache
 - [ ] Test SSH connections
 - [ ] Enable logging
 
-## 📈 Monitoring Setup
+## Monitoring Setup
 
 ### Add Test Server
 ```bash
@@ -232,7 +232,7 @@ php artisan tinker
 ])
 ```
 
-## 🚢 Deployment Commands
+## Deployment Commands
 
 ### Build Frontend
 ```bash
@@ -254,7 +254,7 @@ docker-compose build --no-cache
 docker-compose -f docker-compose.yml up -d
 ```
 
-## 📝 Environment Variables
+## Environment Variables
 
 ### Backend Required
 ```env
@@ -272,7 +272,7 @@ DB_PASSWORD=laravel
 VITE_API_BASE_URL=http://localhost:8000/api
 ```
 
-## 🎯 Useful Artisan Commands
+## Useful Artisan Commands
 ```bash
 php artisan make:model Server -m        # Create model with migration
 php artisan make:controller ServerController --resource # Create controller
@@ -284,7 +284,7 @@ php artisan db:seed --class=DatabaseSeeder # Run seeder
 php artisan cache:clear                  # Clear application cache
 ```
 
-## 💾 Backup Commands
+## Backup Commands
 
 ### Database
 ```bash
@@ -304,7 +304,7 @@ cp -r backend/storage/ssh backup/ssh_backup
 ls -la backup/ssh_backup/
 ```
 
-## 🔄 Troubleshooting Quick Fixes
+## Troubleshooting Quick Fixes
 
 **Port Already In Use**
 ```bash
@@ -336,7 +336,7 @@ curl http://localhost:8000/health
 # Verify VITE_API_BASE_URL in .env.local
 ```
 
-## 📞 Getting Help
+## Getting Help
 
 1. Check logs: `backend/storage/logs/laravel.log`
 2. Review docs: `SETUP_GUIDE.md`, `FEATURES.md`

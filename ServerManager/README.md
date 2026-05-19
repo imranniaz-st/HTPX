@@ -2,7 +2,7 @@
 
 A modern, scalable alternative to Zabbix built with Laravel, MySQL, and Vue.js. Monitor, manage, and secure your Linux servers with ease.
 
-## 🚀 Features
+## Features
 
 - **Real-time Server Monitoring**: CPU, RAM, disk, network metrics
 - **Firewall Management**: Configure and monitor firewall rules
@@ -13,7 +13,7 @@ A modern, scalable alternative to Zabbix built with Laravel, MySQL, and Vue.js. 
 - **Real-time Dashboards**: Live metrics with WebSocket updates
 - **Agent-Based Architecture**: Lightweight agent for server communication
 
-## 📋 Tech Stack
+## Tech Stack
 
 - **Backend**: Laravel 11 + PHP 8.2
 - **Frontend**: Vue.js 3 + Vite
@@ -24,7 +24,7 @@ A modern, scalable alternative to Zabbix built with Laravel, MySQL, and Vue.js. 
 - **Styling**: Tailwind CSS
 - **Icons**: Font Awesome
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 ServerManager/
@@ -58,7 +58,7 @@ ServerManager/
 └── README.md
 ```
 
-## ⚙️ Installation
+## Installation
 
 ### Prerequisites
 - Docker & Docker Compose (recommended)
@@ -95,7 +95,7 @@ npm install
 npm run dev
 ```
 
-## 📚 API Endpoints
+## API Endpoints
 
 ### Authentication
 - `POST /api/auth/login` - User login
@@ -123,7 +123,7 @@ npm run dev
 - `GET /api/servers/{id}/users` - List server users
 - `POST /api/servers/{id}/users/{username}/change-password` - Change password
 
-## 🔐 Security Features
+## Security Features
 
 - JWT authentication
 - Role-based access control (Admin, Manager, Viewer)
@@ -132,11 +132,11 @@ npm run dev
 - Rate limiting on API endpoints
 - CSRF protection
 
-## 📦 Installation & Setup
+## Installation & Setup
 
 See [Backend Setup](./backend/README.md) and [Frontend Setup](./frontend/README.md) for detailed instructions.
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
@@ -154,14 +154,14 @@ See [Backend Setup](./backend/README.md) and [Frontend Setup](./frontend/README.
 - Install WebSocket server: `npm install -g laravel-echo-server`
 - Configure in `config/broadcasting.php`
 
-## 📄 License
+## License
 
 MIT License - See LICENSE file for details
 
-## 🤝 Contributing
+## Contributing
 
 Contributions welcome! Please see CONTRIBUTING.md
 
-## 📞 Support
+## Support
 
 For issues and feature requests, please open an issue on GitHub.

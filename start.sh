@@ -2,7 +2,7 @@
 
 # Server Manager - Development Startup Script
 
-echo "🚀 Starting Server Manager..."
+echo "Starting Server Manager..."
 echo ""
 
 # Colors
@@ -13,7 +13,7 @@ NC='\033[0m' # No Color
 
 # Check if Docker is available
 if command -v docker &> /dev/null; then
-    echo -e "${GREEN}✓ Docker found${NC}"
+    echo -e "${GREEN}Docker found${NC}"
     echo ""
     echo "Starting with Docker Compose..."
     docker-compose up -d
@@ -26,8 +26,8 @@ if command -v docker &> /dev/null; then
     docker-compose exec -T app php artisan migrate:fresh --seed
     
     echo ""
-    echo -e "${GREEN}✓ Backend running at http://localhost:8000${NC}"
-    echo -e "${GREEN}✓ Database configured and seeded${NC}"
+    echo -e "${GREEN}Backend running at http://localhost:8000${NC}"
+    echo -e "${GREEN}Database configured and seeded${NC}"
     echo ""
     echo "Starting frontend development server..."
     cd frontend
@@ -36,7 +36,7 @@ if command -v docker &> /dev/null; then
     cd ..
     
     echo ""
-    echo -e "${GREEN}✓ Frontend running at http://localhost:5173${NC}"
+    echo -e "${GREEN}Frontend running at http://localhost:5173${NC}"
     echo ""
     echo "Default Login Credentials:"
     echo "  Email: admin@servermanager.local"
@@ -53,7 +53,7 @@ else
     cd backend
     
     if ! command -v php &> /dev/null; then
-        echo -e "${RED}✗ PHP not found. Please install PHP 8.2+${NC}"
+        echo -e "${RED}PHP not found. Please install PHP 8.2+${NC}"
         exit 1
     fi
     
@@ -69,7 +69,7 @@ else
     cd ../frontend
     
     if ! command -v node &> /dev/null; then
-        echo -e "${RED}✗ Node.js not found. Please install Node.js 18+${NC}"
+        echo -e "${RED}Node.js not found. Please install Node.js 18+${NC}"
         exit 1
     fi
     

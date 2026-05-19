@@ -33,7 +33,7 @@ Error (4xx/5xx):
 
 ---
 
-## 🔐 Authentication Endpoints
+## Authentication Endpoints
 
 ### Login
 ```
@@ -80,7 +80,7 @@ Authorization: Bearer {token}
 
 ---
 
-## 🖥️ Server Endpoints
+## Server Endpoints
 
 ### List All Servers
 ```
@@ -151,7 +151,7 @@ Authorization: Bearer {token}
 
 ---
 
-## 📊 Metrics Endpoints
+## Metrics Endpoints
 
 ### Get Latest Metrics
 ```
@@ -187,7 +187,7 @@ Returns array of metric objects
 
 ---
 
-## 🚨 Alert Endpoints
+## Alert Endpoints
 
 ### List Alerts
 ```
@@ -228,7 +228,7 @@ Authorization: Bearer {token}
 
 ---
 
-## 🔥 Firewall Endpoints
+## Firewall Endpoints
 
 ### List Firewall Rules
 ```
@@ -291,7 +291,7 @@ Authorization: Bearer {token}
 
 ---
 
-## ⚠️ Alert Rule Endpoints
+## Alert Rule Endpoints
 
 ### List Alert Rules
 ```
@@ -338,7 +338,7 @@ Authorization: Bearer {token}
 
 ---
 
-## 👥 User Endpoints
+## User Endpoints
 
 ### Get Server Users
 ```
@@ -376,7 +376,7 @@ Content-Type: application/json
 
 ---
 
-## 📈 Dashboard Endpoints
+## Dashboard Endpoints
 
 ### Get Dashboard Stats
 ```
@@ -419,7 +419,7 @@ Authorization: Bearer {token}
 
 ---
 
-## 👤 Profile Endpoints
+## Profile Endpoints
 
 ### Get Profile
 ```
@@ -454,7 +454,7 @@ Content-Type: application/json
 
 ---
 
-## 🔧 Agent Endpoints
+## Agent Endpoints
 
 ### Heartbeat
 ```
@@ -504,7 +504,7 @@ Content-Type: application/json
 
 ---
 
-## 🧪 cURL Examples
+## cURL Examples
 
 ### Login
 ```bash

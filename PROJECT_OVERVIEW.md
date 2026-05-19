@@ -1,6 +1,6 @@
 # Server Manager - Project Overview
 
-## 📌 What is Server Manager?
+## What is Server Manager?
 
 **Server Manager** is an advanced, modern alternative to Zabbix built with Laravel and Vue.js. It's a comprehensive server monitoring and management system that allows you to:
 
@@ -11,7 +11,7 @@
 - Configure servers through a web interface
 - Track CPU, Memory, Disk, and Network metrics
 
-## 🎯 Core Capabilities
+## Core Capabilities
 
 ### 1. Server Monitoring
 - **Real-time Metrics**: CPU, RAM, Disk, Network usage
@@ -42,7 +42,7 @@
 - **Metrics Visualization**: Charts and graphs
 - **Server Grid**: All servers at a glance
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────┐
@@ -81,7 +81,7 @@
 └──────────┘ └─────────┘ └───────────┘
 ```
 
-## 🚀 Tech Stack
+## Tech Stack
 
 **Backend**
 - Language: PHP 8.2+
@@ -106,7 +106,7 @@
 - Cache: Redis
 - Real-time: Pusher/Laravel Echo
 
-## 📊 Database Schema
+## Database Schema
 
 ### Core Tables
 
@@ -128,7 +128,7 @@
 **alert_rules** - Alert configurations
 - id, server_id, metric_type, operator, threshold, severity
 
-## 🔐 Security Architecture
+## Security Architecture
 
 ```
 Internet → HTTPS → Nginx → Laravel
@@ -156,7 +156,7 @@ Internet → HTTPS → Nginx → Laravel
 4. Results sent back to frontend
 5. No passwords stored (key-based auth)
 
-## 📈 Data Flow
+## Data Flow
 
 ### Monitoring Data Collection
 ```
@@ -194,7 +194,7 @@ Execute: sudo ufw allow/deny
 Return status to frontend
 ```
 
-## 🔄 Key Workflows
+## Key Workflows
 
 ### Adding a Server
 1. Admin fills server form (IP, hostname, SSH credentials)
@@ -220,7 +220,7 @@ Return status to frontend
 5. Execute: echo 'user:password' | chpasswd
 6. Return success status
 
-## 🎨 UI Components
+## UI Components
 
 ### Main Views
 - **Login**: Authentication page
@@ -237,7 +237,7 @@ Return status to frontend
 - MetricChart: Data visualization
 - FirewallRuleForm: Rule configuration
 
-## 🔔 Alert System
+## Alert System
 
 ### Alert Types
 - **disk_full**: Disk space exceeded threshold
@@ -259,7 +259,7 @@ Return status to frontend
 - **Webhook**: HTTP POST to custom URL
 - **Real-time**: WebSocket to dashboard
 
-## 🔗 API Structure
+## API Structure
 
 ### Request Format
 ```
@@ -296,7 +296,7 @@ Content-Type: application/json
 }
 ```
 
-## 📦 Deployment
+## Deployment
 
 ### Development
 ```bash
@@ -313,7 +313,7 @@ npm run dev
 - Use SSH keys exclusively
 - Enable rate limiting
 
-## 🎯 Use Cases
+## Use Cases
 
 ### System Administration
 - Monitor all servers from one dashboard
@@ -333,7 +333,7 @@ npm run dev
 - SSH key-based authentication
 - Role-based permissions
 
-## 🚦 Getting Started
+## Getting Started
 
 ### Quick Start (Docker)
 ```bash
@@ -349,7 +349,7 @@ Login: admin@servermanager.local / admin123
 ### Manual Setup
 See SETUP_GUIDE.md for detailed instructions
 
-## 📚 Documentation Files
+## Documentation Files
 
 - **README.md** - Project overview
 - **SETUP_GUIDE.md** - Installation guide
@@ -358,7 +358,7 @@ See SETUP_GUIDE.md for detailed instructions
 - **frontend/README.md** - Frontend setup
 - **API_DOCUMENTATION.md** - API reference (optional)
 
-## 🤝 Contributing
+## Contributing
 
 1. Follow Laravel + Vue.js best practices
 2. Write tests for new features
@@ -366,7 +366,7 @@ See SETUP_GUIDE.md for detailed instructions
 4. Keep components reusable
 5. Follow security guidelines
 
-## 📞 Troubleshooting
+## Troubleshooting
 
 ### Issue: SSH Connection Fails
 - Verify key permissions (600)
@@ -383,7 +383,7 @@ See SETUP_GUIDE.md for detailed instructions
 - Check VITE_API_BASE_URL
 - Review browser console errors
 
-## 🎓 Learning Path
+## Learning Path
 
 1. **Start**: Review this overview
 2. **Setup**: Follow SETUP_GUIDE.md
@@ -391,7 +391,7 @@ See SETUP_GUIDE.md for detailed instructions
 4. **Develop**: Read code in app/Models and src/views
 5. **Deploy**: Use production checklist
 
-## 📄 License
+## License
 
 MIT License - Free for personal and commercial use
 
