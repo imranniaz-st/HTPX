@@ -35,10 +35,6 @@ RUN docker-php-ext-configure gd --with-freetype --with-jpeg && \
 
 RUN pecl install redis && docker-php-ext-enable redis
 
-RUN apt-get install -y libssh2-1 && \
-    pecl install ssh2-1.3.0 && \
-    docker-php-ext-enable ssh2
-
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 COPY . .
