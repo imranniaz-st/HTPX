@@ -16,11 +16,11 @@ echo ""
 echo "Repository cloned successfully!"
 echo "Location: $(pwd)"
 echo ""
-echo "📂 Contents:"
+echo "Contents:"
 ls -la
 
 echo ""
-echo "🔧 Stopping old containers..."
+echo "Stopping old containers..."
 docker-compose -f docker-compose.prod.yml down 2>/dev/null || echo "No previous containers"
 
 echo ""
@@ -38,4 +38,4 @@ docker-compose -f docker-compose.prod.yml ps
 echo ""
 echo "✨ Deployment complete!"
 echo "Access your application at: http://167.99.13.48:8001"
-echo "📧 Login: admin@servermanager.local / admin123"
+echo "Login: admin@servermanager.local / admin123"

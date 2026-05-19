@@ -73,7 +73,7 @@ ssh root@167.99.13.48 "cd /opt/server-manager && docker-compose -f docker-compos
 
 ---
 
-## 📋 What Gets Synced
+## What Gets Synced
 
 ### Backend
 - `backend/app/` - PHP models, controllers, services
@@ -138,7 +138,7 @@ ssh root@167.99.13.48 "cd /opt/server-manager && docker-compose -f docker-compos
 
 ---
 
-## 🔧 Common Sync Scenarios
+## Common Sync Scenarios
 
 ### Scenario 1: Changed PHP Code (Models, Controllers)
 ```bash
@@ -255,7 +255,7 @@ bash sync-to-server.sh 167.99.13.48 rebuild
 
 ---
 
-## 🔐 Security Notes
+## Security Notes
 
 - `.env` file is **never** synced (keeps production secrets safe)
 - SSH keys required for syncing (use ssh-copy-id)
@@ -264,7 +264,7 @@ bash sync-to-server.sh 167.99.13.48 rebuild
 
 ---
 
-## 📚 Additional Commands
+## Additional Commands
 
 ### Just Copy Files (No Rebuild)
 ```bash

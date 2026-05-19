@@ -66,7 +66,7 @@ set -e
 DEPLOY_PATH="/opt/server-manager"
 DEPLOY_BRANCH="$1"
 
-echo "📦 Deploying to $DEPLOY_PATH..."
+echo "Deploying to $DEPLOY_PATH..."
 
 # Create deployment directory if not exists
 if [ ! -d "$DEPLOY_PATH" ]; then

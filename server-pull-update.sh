@@ -15,7 +15,7 @@ echo "Pulling from Git repository..."
 git pull origin main 2>/dev/null || echo "Git pull skipped (not a git repo)"
 
 echo ""
-echo "🏗️  Building Docker containers..."
+echo "Building Docker containers..."
 docker-compose -f docker-compose.prod.yml build --no-cache
 
 echo ""
@@ -27,11 +27,11 @@ echo "⏳ Waiting for services to start..."
 sleep 10
 
 echo ""
-echo "📦 Running database migrations..."
+echo "Running database migrations..."
 docker-compose -f docker-compose.prod.yml exec -T app php artisan migrate
 
 echo ""
-echo "🧹 Clearing caches..."
+echo "Clearing caches..."
 docker-compose -f docker-compose.prod.yml exec -T app php artisan cache:clear
 docker-compose -f docker-compose.prod.yml exec -T app php artisan config:clear
 

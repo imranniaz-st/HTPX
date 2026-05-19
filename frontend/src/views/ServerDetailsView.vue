@@ -133,8 +133,8 @@
           <div class="space-y-4">
             <div class="flex justify-between">
               <div class="flex space-x-2">
-                <button class="btn btn-secondary btn-small">📥 Download</button>
-                <button class="btn btn-danger btn-small">🗑️ Clear Old</button>
+                <button class="btn btn-secondary btn-small">Download</button>
+                <button class="btn btn-danger btn-small">Clear Old</button>
               </div>
               <router-link :to="`/servers/${server.id}/logs`" class="btn btn-primary btn-small">
                 View All Logs
