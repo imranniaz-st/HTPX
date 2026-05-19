@@ -6,20 +6,20 @@
 
 DEPLOY_PATH="/opt/server-manager"
 
-echo "🔄 Pulling latest changes..."
+echo "Pulling latest changes..."
 echo ""
 
 cd $DEPLOY_PATH || exit 1
 
-echo "📥 Pulling from Git repository..."
-git pull origin main 2>/dev/null || echo "⚠️  Git pull skipped (not a git repo)"
+echo "Pulling from Git repository..."
+git pull origin main 2>/dev/null || echo "Git pull skipped (not a git repo)"
 
 echo ""
 echo "🏗️  Building Docker containers..."
 docker-compose -f docker-compose.prod.yml build --no-cache
 
 echo ""
-echo "🚀 Starting services..."
+echo "Starting services..."
 docker-compose -f docker-compose.prod.yml up -d
 
 echo ""

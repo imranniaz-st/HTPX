@@ -9,12 +9,12 @@ SERVER_IP="${1:-167.99.13.48}"
 REBUILD="${2:-}"
 DEPLOY_PATH="/opt/server-manager"
 
-echo "🔄 Syncing local changes to $SERVER_IP..."
+echo "Syncing local changes to $SERVER_IP..."
 echo ""
 
 # Verify SSH connection
 if ! ssh -o ConnectTimeout=5 root@$SERVER_IP "echo 'Connected'" > /dev/null 2>&1; then
-    echo "❌ Cannot connect to $SERVER_IP"
+    echo "Cannot connect to $SERVER_IP"
     exit 1
 fi
 
@@ -43,7 +43,7 @@ rsync -avz \
   root@$SERVER_IP:$DEPLOY_PATH/
 
 echo ""
-echo "✓ Files synced successfully"
+echo "Files synced successfully"
 echo ""
 
 # If rebuild flag is set
@@ -52,22 +52,22 @@ if [ "$REBUILD" == "rebuild" ]; then
     ssh root@$SERVER_IP "cd $DEPLOY_PATH && \
         echo '🏗️  Rebuilding containers...' && \
         docker-compose -f docker-compose.prod.yml build --no-cache && \
-        echo '🚀 Restarting services...' && \
+        echo 'Restarting services...' && \
         docker-compose -f docker-compose.prod.yml up -d && \
         echo '📦 Running migrations...' && \
         docker-compose -f docker-compose.prod.yml exec -T app php artisan migrate && \
-        echo '✅ Rebuild complete!'"
+        echo 'Rebuild complete!'"
     
     echo ""
     echo "Testing application..."
     RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" http://$SERVER_IP/)
     if [ "$RESPONSE" == "200" ]; then
-        echo "✅ Application is responding (HTTP 200)"
+        echo "Application is responding (HTTP 200)"
     else
-        echo "⚠️  Application returned HTTP $RESPONSE"
+        echo "Application returned HTTP $RESPONSE"
     fi
 else
-    echo "💡 To rebuild containers, run:"
+    echo "To rebuild containers, run:"
     echo "   bash sync-to-server.sh $SERVER_IP rebuild"
     echo ""
     echo "Or manually on server:"
@@ -77,4 +77,4 @@ else
 fi
 
 echo ""
-echo "✅ Sync complete!"
+echo "Sync complete!"

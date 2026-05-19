@@ -7,13 +7,13 @@
           @click="downloadLogs"
           class="btn btn-secondary"
         >
-          📥 Download CSV
+          Download CSV
         </button>
         <button
           @click="showClearModal = true"
           class="btn btn-danger"
         >
-          🗑️ Clear Old
+          Clear Old
         </button>
       </div>
     </div>

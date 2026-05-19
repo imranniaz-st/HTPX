@@ -1,13 +1,12 @@
 <template>
   <div class="space-y-6">
     <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-      <StatCard title="Total Servers" :value="stats.total_servers" icon="server" />
-      <StatCard title="Online" :value="stats.online_servers" icon="check" class="text-green-600" />
-      <StatCard title="Offline" :value="stats.offline_servers" icon="x" class="text-red-600" />
+      <StatCard title="Total Servers" :value="stats.total_servers" />
+      <StatCard title="Online" :value="stats.online_servers" class="text-green-600" />
+      <StatCard title="Offline" :value="stats.offline_servers" class="text-red-600" />
       <StatCard
         title="Critical Alerts"
         :value="stats.critical_alerts"
-        icon="alert"
         class="text-red-600"
       />
     </div>

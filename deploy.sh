@@ -28,7 +28,7 @@ echo ""
 
 # Validate inputs
 if [ -z "$DEPLOY_HOST" ]; then
-    echo -e "${RED}❌ Usage: bash deploy.sh <host> [branch]${NC}"
+    echo -e "${RED}Usage: bash deploy.sh <host> [branch]${NC}"
     echo "Example: bash deploy.sh 167.99.13.48 main"
     exit 1
 fi
@@ -44,10 +44,10 @@ echo ""
 # Test connection
 echo -e "${YELLOW}Testing SSH connection...${NC}"
 if ! ssh -o ConnectTimeout=5 "$DEPLOY_USER@$DEPLOY_HOST" "echo 'SSH OK'"; then
-    echo -e "${RED}❌ Cannot connect to $DEPLOY_HOST${NC}"
+    echo -e "${RED}Cannot connect to $DEPLOY_HOST${NC}"
     exit 1
 fi
-echo -e "${GREEN}✓ SSH connection OK${NC}"
+echo -e "${GREEN}SSH connection OK${NC}"
 echo ""
 
 # Build frontend
@@ -56,7 +56,7 @@ cd frontend
 npm install --silent
 npm run build
 cd ..
-echo -e "${GREEN}✓ Frontend built${NC}"
+echo -e "${GREEN}Frontend built${NC}"
 echo ""
 
 # Deploy script to run on server
@@ -84,7 +84,7 @@ else
     git pull origin "$DEPLOY_BRANCH"
 fi
 
-echo "✓ Code updated"
+echo "Code updated"
 
 # Copy environment file if not exists
 if [ ! -f "$DEPLOY_PATH/.env" ]; then
@@ -105,7 +105,7 @@ REDIS_PASSWORD=$(openssl rand -base64 16)
 
 MAIL_DRIVER=log
 EOF
-    echo "✓ .env file created with secure passwords"
+    echo ".env file created with secure passwords"
 fi
 
 # Create SSL certificates if not exists
@@ -117,7 +117,7 @@ if [ ! -f "$CERTS_DIR/cert.pem" ]; then
         -keyout "$CERTS_DIR/key.pem" \
         -out "$CERTS_DIR/cert.pem" \
         -subj "/C=US/ST=State/L=City/O=Organization/CN=$(hostname -I | awk '{print $1}')"
-    echo "✓ SSL certificates created"
+    echo "SSL certificates created"
 fi
 
 # Load environment variables
@@ -147,7 +147,7 @@ npm run build
 docker-compose -f "$DEPLOY_PATH/docker-compose.prod.yml" exec -T nginx rm -rf /app/frontend/dist || true
 docker cp frontend-build-temp:/app/dist "$DEPLOY_PATH/frontend/" 2>/dev/null || true
 
-echo "✓ Deployment completed!"
+echo "Deployment completed!"
 echo ""
 echo "Access your application at:"
 echo "  URL: http://$(hostname -I | awk '{print $1}')"
@@ -164,7 +164,7 @@ scp -r backend "$DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH/" 2>/dev/null || true
 scp -r frontend/dist "$DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH/frontend/" 2>/dev/null || true
 scp -r docker "$DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH/" 2>/dev/null || true
 scp docker-compose.prod.yml "$DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH/" 2>/dev/null || true
-echo -e "${GREEN}✓ Files copied${NC}"
+echo -e "${GREEN}Files copied${NC}"
 echo ""
 
 # Execute remote deployment
@@ -235,7 +235,7 @@ docker-compose -f docker-compose.prod.yml exec -T nginx rm -rf /app/frontend/dis
 # Generate app key if needed
 docker-compose -f docker-compose.prod.yml exec -T app php artisan key:generate --force || true
 
-echo "✓ Deployment successful!"
+echo "Deployment successful!"
 echo ""
 echo "Application is running at:"
 echo "  URL: http://$(hostname -I | awk '{print $1}')"
@@ -245,10 +245,10 @@ echo "    Password: admin123"
 
 SSH_SCRIPT_END
 
-echo -e "${GREEN}✓ Remote deployment completed!${NC}"
+echo -e "${GREEN}Remote deployment completed!${NC}"
 echo ""
 echo -e "${BLUE}================================${NC}"
-echo -e "${GREEN}✓ Deployment Complete!${NC}"
+echo -e "${GREEN}Deployment Complete!${NC}"
 echo -e "${BLUE}================================${NC}"
 echo ""
 echo "Your application is now running on:"

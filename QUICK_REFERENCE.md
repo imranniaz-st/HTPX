@@ -1,6 +1,6 @@
 # Quick Reference Guide
 
-## 🚀 Quick Start Commands
+## Quick Start Commands
 
 ### Docker Setup (Recommended)
 ```bash
@@ -27,7 +27,7 @@ npm install
 npm run dev
 ```
 
-## 📊 Default Credentials
+## Default Credentials
 | Role | Email | Password |
 |------|-------|----------|
 | Admin | admin@servermanager.local | admin123 |
@@ -194,7 +194,7 @@ docker-compose build --no-cache
 - [ ] Test SSH connections
 - [ ] Enable logging
 
-## 📈 Monitoring Setup
+## Monitoring Setup
 
 ### Add Test Server
 ```bash
@@ -254,7 +254,7 @@ docker-compose build --no-cache
 docker-compose -f docker-compose.yml up -d
 ```
 
-## 📝 Environment Variables
+## Environment Variables
 
 ### Backend Required
 ```env
@@ -272,7 +272,7 @@ DB_PASSWORD=laravel
 VITE_API_BASE_URL=http://localhost:8000/api
 ```
 
-## 🎯 Useful Artisan Commands
+## Useful Artisan Commands
 ```bash
 php artisan make:model Server -m        # Create model with migration
 php artisan make:controller ServerController --resource # Create controller
@@ -284,7 +284,7 @@ php artisan db:seed --class=DatabaseSeeder # Run seeder
 php artisan cache:clear                  # Clear application cache
 ```
 
-## 💾 Backup Commands
+## Backup Commands
 
 ### Database
 ```bash
@@ -304,7 +304,7 @@ cp -r backend/storage/ssh backup/ssh_backup
 ls -la backup/ssh_backup/
 ```
 
-## 🔄 Troubleshooting Quick Fixes
+## Troubleshooting Quick Fixes
 
 **Port Already In Use**
 ```bash

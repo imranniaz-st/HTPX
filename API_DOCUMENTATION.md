@@ -80,7 +80,7 @@ Authorization: Bearer {token}
 
 ---
 
-## 🖥️ Server Endpoints
+## Server Endpoints
 
 ### List All Servers
 ```
@@ -151,7 +151,7 @@ Authorization: Bearer {token}
 
 ---
 
-## 📊 Metrics Endpoints
+## Metrics Endpoints
 
 ### Get Latest Metrics
 ```
