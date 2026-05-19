@@ -18,7 +18,7 @@ if ! ssh -o ConnectTimeout=5 root@$SERVER_IP "echo 'Connected'" > /dev/null 2>&1
     exit 1
 fi
 
-echo "📤 Syncing backend code..."
+echo "Syncing backend code..."
 rsync -avz --delete \
   --exclude='.env' \
   --exclude='storage/logs/*' \
@@ -28,7 +28,7 @@ rsync -avz --delete \
   backend/ root@$SERVER_IP:$DEPLOY_PATH/backend/
 
 echo ""
-echo "📤 Syncing frontend code..."
+echo "Syncing frontend code..."
 rsync -avz --delete \
   --exclude='dist/*' \
   --exclude='node_modules/*' \
@@ -36,7 +36,7 @@ rsync -avz --delete \
   frontend/ root@$SERVER_IP:$DEPLOY_PATH/frontend/
 
 echo ""
-echo "📤 Syncing docker configurations..."
+echo "Syncing docker configurations..."
 rsync -avz \
   docker-compose.prod.yml \
   docker/ \
@@ -48,13 +48,13 @@ echo ""
 
 # If rebuild flag is set
 if [ "$REBUILD" == "rebuild" ]; then
-    echo "🔨 Rebuilding application on server..."
+    echo "Rebuilding application on server..."
     ssh root@$SERVER_IP "cd $DEPLOY_PATH && \
-        echo '🏗️  Rebuilding containers...' && \
+        echo 'Rebuilding containers...' && \
         docker-compose -f docker-compose.prod.yml build --no-cache && \
         echo 'Restarting services...' && \
         docker-compose -f docker-compose.prod.yml up -d && \
-        echo '📦 Running migrations...' && \
+        echo 'Running migrations...' && \
         docker-compose -f docker-compose.prod.yml exec -T app php artisan migrate && \
         echo 'Rebuild complete!'"
     

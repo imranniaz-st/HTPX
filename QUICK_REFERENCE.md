@@ -34,7 +34,7 @@ npm run dev
 | Manager | manager@servermanager.local | manager123 |
 | Viewer | viewer@servermanager.local | viewer123 |
 
-## 🛠️ Common Tasks
+## Common Tasks
 
 ### Generate SSH Keys
 ```bash
@@ -79,7 +79,7 @@ tail -f backend/storage/logs/laravel.log
 docker-compose logs -f app
 ```
 
-## 🔌 API Endpoints Reference
+## API Endpoints Reference
 
 ### Auth
 ```
@@ -125,7 +125,7 @@ GET /api/servers/{id}/users                    # List users
 POST /api/servers/{id}/users/{username}/change-password # Change password
 ```
 
-## 🐛 Debugging
+## Debugging
 
 ### Backend Issues
 ```bash
@@ -165,7 +165,7 @@ docker-compose restart
 docker-compose build --no-cache
 ```
 
-## 📁 Important Files
+## Important Files
 
 **Backend**
 - `.env` - Configuration
@@ -181,7 +181,7 @@ docker-compose build --no-cache
 - `src/services/api-client.js` - API calls
 - `src/router/index.js` - Routing
 
-## 🔐 Security Checklist
+## Security Checklist
 
 - [ ] Change default passwords
 - [ ] Generate SSH keys
@@ -232,7 +232,7 @@ php artisan tinker
 ])
 ```
 
-## 🚢 Deployment Commands
+## Deployment Commands
 
 ### Build Frontend
 ```bash
@@ -336,7 +336,7 @@ curl http://localhost:8000/health
 # Verify VITE_API_BASE_URL in .env.local
 ```
 
-## 📞 Getting Help
+## Getting Help
 
 1. Check logs: `backend/storage/logs/laravel.log`
 2. Review docs: `SETUP_GUIDE.md`, `FEATURES.md`

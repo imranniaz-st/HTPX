@@ -33,7 +33,7 @@ Error (4xx/5xx):
 
 ---
 
-## 🔐 Authentication Endpoints
+## Authentication Endpoints
 
 ### Login
 ```
@@ -187,7 +187,7 @@ Returns array of metric objects
 
 ---
 
-## 🚨 Alert Endpoints
+## Alert Endpoints
 
 ### List Alerts
 ```
@@ -338,7 +338,7 @@ Authorization: Bearer {token}
 
 ---
 
-## 👥 User Endpoints
+## User Endpoints
 
 ### Get Server Users
 ```
@@ -454,7 +454,7 @@ Content-Type: application/json
 
 ---
 
-## 🔧 Agent Endpoints
+## Agent Endpoints
 
 ### Heartbeat
 ```
@@ -504,7 +504,7 @@ Content-Type: application/json
 
 ---
 
-## 🧪 cURL Examples
+## cURL Examples
 
 ### Login
 ```bash

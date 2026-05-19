@@ -1,6 +1,6 @@
 # Server Manager - Project Overview
 
-## 📌 What is Server Manager?
+## What is Server Manager?
 
 **Server Manager** is an advanced, modern alternative to Zabbix built with Laravel and Vue.js. It's a comprehensive server monitoring and management system that allows you to:
 
@@ -42,7 +42,7 @@
 - **Metrics Visualization**: Charts and graphs
 - **Server Grid**: All servers at a glance
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────┐
@@ -128,7 +128,7 @@
 **alert_rules** - Alert configurations
 - id, server_id, metric_type, operator, threshold, severity
 
-## 🔐 Security Architecture
+## Security Architecture
 
 ```
 Internet → HTTPS → Nginx → Laravel
@@ -296,7 +296,7 @@ Content-Type: application/json
 }
 ```
 
-## 📦 Deployment
+## Deployment
 
 ### Development
 ```bash
@@ -333,7 +333,7 @@ npm run dev
 - SSH key-based authentication
 - Role-based permissions
 
-## 🚦 Getting Started
+## Getting Started
 
 ### Quick Start (Docker)
 ```bash
@@ -349,7 +349,7 @@ Login: admin@servermanager.local / admin123
 ### Manual Setup
 See SETUP_GUIDE.md for detailed instructions
 
-## 📚 Documentation Files
+## Documentation Files
 
 - **README.md** - Project overview
 - **SETUP_GUIDE.md** - Installation guide
@@ -358,7 +358,7 @@ See SETUP_GUIDE.md for detailed instructions
 - **frontend/README.md** - Frontend setup
 - **API_DOCUMENTATION.md** - API reference (optional)
 
-## 🤝 Contributing
+## Contributing
 
 1. Follow Laravel + Vue.js best practices
 2. Write tests for new features
@@ -366,7 +366,7 @@ See SETUP_GUIDE.md for detailed instructions
 4. Keep components reusable
 5. Follow security guidelines
 
-## 📞 Troubleshooting
+## Troubleshooting
 
 ### Issue: SSH Connection Fails
 - Verify key permissions (600)
@@ -383,7 +383,7 @@ See SETUP_GUIDE.md for detailed instructions
 - Check VITE_API_BASE_URL
 - Review browser console errors
 
-## 🎓 Learning Path
+## Learning Path
 
 1. **Start**: Review this overview
 2. **Setup**: Follow SETUP_GUIDE.md
@@ -391,7 +391,7 @@ See SETUP_GUIDE.md for detailed instructions
 4. **Develop**: Read code in app/Models and src/views
 5. **Deploy**: Use production checklist
 
-## 📄 License
+## License
 
 MIT License - Free for personal and commercial use
 
