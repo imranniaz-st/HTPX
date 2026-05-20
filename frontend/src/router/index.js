@@ -4,6 +4,7 @@ import { useAuthStore } from '@/stores/authStore'
 import DashboardView from '@/views/DashboardView.vue'
 import ServersView from '@/views/ServersView.vue'
 import ServerDetailsView from '@/views/ServerDetailsView.vue'
+import ServerAddView from '@/views/ServerAddView.vue'
 import ServerLogsView from '@/views/ServerLogsView.vue'
 import AlertsView from '@/views/AlertsView.vue'
 import LoginView from '@/views/LoginView.vue'
@@ -30,6 +31,12 @@ const routes = [
     path: '/servers',
     name: 'Servers',
     component: ServersView,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: '/servers/add',
+    name: 'ServerAdd',
+    component: ServerAddView,
     meta: { requiresAuth: true },
   },
   {
