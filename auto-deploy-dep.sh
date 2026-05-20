@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+# update
 set -euo pipefail
 
 DEPLOY_PATH="${DEPLOY_PATH:-/opt/server-manager}"
