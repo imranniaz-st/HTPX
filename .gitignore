@@ -50,3 +50,6 @@ node_modules/
 /backend/vendor
 *.sh
 /backend/.env
+backend/.env
+backend/.env
+backend/storage/logs/laravel.log
