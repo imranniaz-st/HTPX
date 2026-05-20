@@ -150,3 +150,17 @@ export const authAPI = {
     return api.post('/auth/logout')
   },
 }
+
+export const adminAPI = {
+  getUsers(page = 1, perPage = 50) {
+    return api.get(`/admin/users?page=${page}&per_page=${perPage}`)
+  },
+
+  getLogs(page = 1, perPage = 50, serverId = null) {
+    const params = new URLSearchParams()
+    params.append('page', page)
+    params.append('per_page', perPage)
+    if (serverId) params.append('server_id', serverId)
+    return api.get(`/admin/logs?${params.toString()}`)
+  },
+}

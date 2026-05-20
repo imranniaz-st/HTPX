@@ -7,6 +7,7 @@ import ServerDetailsView from '@/views/ServerDetailsView.vue'
 import ServerLogsView from '@/views/ServerLogsView.vue'
 import AlertsView from '@/views/AlertsView.vue'
 import LoginView from '@/views/LoginView.vue'
+import AdminView from '@/views/AdminView.vue'
 
 const routes = [
   {
@@ -47,6 +48,12 @@ const routes = [
     path: '/alerts',
     name: 'Alerts',
     component: AlertsView,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: '/admin',
+    name: 'Admin',
+    component: AdminView,
     meta: { requiresAuth: true },
   },
 ]

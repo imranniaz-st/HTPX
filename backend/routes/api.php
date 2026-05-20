@@ -41,6 +41,10 @@ Route::middleware(['auth:sanctum'])->group(function () {
     
     // Logout
     Route::post('/logout', 'App\Http\Controllers\AuthController@logout');
+
+    // Admin Routes
+    Route::get('/admin/users', 'App\Http\Controllers\AdminController@users');
+    Route::get('/admin/logs', 'App\Http\Controllers\AdminController@logs');
 });
 
 // Public Auth Routes
