@@ -18,6 +18,7 @@ return new class extends Migration
             $table->enum('ssh_auth_type', ['key', 'password'])->default('key');
             $table->string('ssh_key_path')->nullable();
             $table->enum('os_type', ['linux', 'windows', 'macos'])->default('linux');
+            $table->enum('status', ['online', 'offline', 'unknown'])->default('unknown');
             $table->text('description')->nullable();
             $table->timestamp('last_heartbeat')->nullable();
             $table->timestamps();

@@ -60,10 +60,12 @@ class Server extends Model
         return $this->hasMany(ServerLog::class);
     }
 
-    public function getStatusAttribute()
+    public function getStatusAttribute($value)
     {
         $lastHeartbeat = $this->last_heartbeat;
-        if (!$lastHeartbeat) return 'unknown';
+        if (!$lastHeartbeat) {
+            return $value ?: 'unknown';
+        }
         
         $diffMinutes = now()->diffInMinutes($lastHeartbeat);
         return $diffMinutes > 5 ? 'offline' : 'online';

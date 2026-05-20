@@ -17,7 +17,10 @@ class AgentController extends Controller
 
         $server = Server::findOrFail($validated['server_id']);
         // Verify API key here
-        $server->update(['last_heartbeat' => now()]);
+        $server->update([
+            'last_heartbeat' => now(),
+            'status' => 'online',
+        ]);
 
         return response()->json(['status' => 'ok', 'timestamp' => now()]);
     }

@@ -1,4 +1,4 @@
-FROM php:8.2-fpm
+FROM php:8.4-fpm
 
 WORKDIR /app
 
@@ -39,18 +39,21 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 COPY . .
 
-# Install PHP dependencies without running composer scripts (artisan may be missing in repo)
-RUN composer install --no-interaction --no-dev --prefer-dist --no-scripts || true
+RUN mkdir -p \
+        bootstrap/cache \
+        storage/app/private \
+        storage/app/public \
+        storage/framework/cache/data \
+        storage/framework/sessions \
+        storage/framework/views \
+        storage/logs \
+        storage/ssh && \
+    composer install --no-interaction --no-dev --prefer-dist --no-scripts && \
+    composer dump-autoload --no-interaction --optimize
 
-# If the artisan file exists, run setup commands; otherwise skip
-RUN if [ -f artisan ]; then \
-            php artisan key:generate || true; \
-            php artisan config:cache || true; \
-            php artisan package:discover --ansi || true; \
-        else \
-            echo "artisan not found, skipping artisan setup"; \
-        fi
+COPY docker/entrypoint.sh /usr/local/bin/docker-entrypoint
 
 EXPOSE 8000
 
+ENTRYPOINT ["sh", "/usr/local/bin/docker-entrypoint"]
 CMD php artisan serve --host=0.0.0.0 --port=8000

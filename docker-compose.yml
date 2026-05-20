@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   app:
     build:
@@ -8,6 +6,7 @@ services:
     container_name: server-manager-app
     restart: unless-stopped
     working_dir: /app
+    command: php artisan serve --host=0.0.0.0 --port=8000
     environment:
       - DB_HOST=mysql
       - DB_DATABASE=${DB_DATABASE:-server_manager}
@@ -15,7 +14,10 @@ services:
       - DB_PASSWORD=${DB_PASSWORD:-laravel}
       - REDIS_HOST=redis
       - CACHE_DRIVER=redis
+      - CACHE_STORE=redis
       - QUEUE_CONNECTION=redis
+      - SESSION_DRIVER=cookie
+      - RUN_MIGRATIONS=true
     volumes:
       - ./backend:/app
     ports:
@@ -55,7 +57,8 @@ services:
     image: node:18-alpine
     container_name: server-manager-websocket
     working_dir: /app
-    command: npm run websocket
+    command: >
+      sh -lc 'if [ -f package.json ]; then npm run websocket; else echo "package.json missing in /app; websocket service is not available"; tail -f /dev/null; fi'
     volumes:
       - ./backend:/app
     ports:
