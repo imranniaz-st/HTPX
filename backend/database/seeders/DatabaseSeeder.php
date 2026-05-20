@@ -7,37 +7,48 @@ use App\Models\User;
 use App\Models\Server;
 use App\Models\Tag;
 use Illuminate\Support\Facades\Hash;
+use Spatie\Permission\Models\Role;
 
 class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        // Create admin user
-        User::create([
-            'name' => 'Administrator',
-            'email' => 'admin@servermanager.local',
-            'password' => Hash::make('admin123'),
-            'role' => 'admin',
-            'is_active' => true,
-        ]);
+        foreach ([User::ROLE_ADMIN, User::ROLE_MANAGER, User::ROLE_VIEWER] as $roleName) {
+            Role::findOrCreate($roleName, 'sanctum');
+        }
 
-        // Create manager user
-        User::create([
-            'name' => 'Manager',
-            'email' => 'manager@servermanager.local',
-            'password' => Hash::make('manager123'),
-            'role' => 'manager',
-            'is_active' => true,
-        ]);
+        $users = [
+            [
+                'name' => 'Administrator',
+                'email' => 'admin@servermanager.local',
+                'password' => Hash::make('admin123'),
+                'role' => User::ROLE_ADMIN,
+            ],
+            [
+                'name' => 'Manager',
+                'email' => 'manager@servermanager.local',
+                'password' => Hash::make('manager123'),
+                'role' => User::ROLE_MANAGER,
+            ],
+            [
+                'name' => 'Viewer',
+                'email' => 'viewer@servermanager.local',
+                'password' => Hash::make('viewer123'),
+                'role' => User::ROLE_VIEWER,
+            ],
+        ];
 
-        // Create viewer user
-        User::create([
-            'name' => 'Viewer',
-            'email' => 'viewer@servermanager.local',
-            'password' => Hash::make('viewer123'),
-            'role' => 'viewer',
-            'is_active' => true,
-        ]);
+        foreach ($users as $userData) {
+            $roleName = $userData['role'];
+            unset($userData['role']);
+
+            $user = User::updateOrCreate(
+                ['email' => $userData['email']],
+                $userData + ['is_active' => true]
+            );
+
+            $user->syncRoles([$roleName]);
+        }
 
         // Create tags
         $tags = [

@@ -17,7 +17,7 @@ class AdminController extends Controller
     protected function ensureAdmin()
     {
         $user = Auth::user();
-        if (! $user || $user->role !== 'admin') {
+        if (! $user || ! $user->hasRole(User::ROLE_ADMIN)) {
             abort(403, 'This action is unauthorized.');
         }
     }
