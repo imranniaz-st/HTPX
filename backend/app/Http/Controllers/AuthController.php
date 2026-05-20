@@ -50,9 +50,10 @@ class AuthController extends Controller
             'name' => $validated['name'],
             'email' => $validated['email'],
             'password' => Hash::make($validated['password']),
-            'role' => 'viewer',
             'is_active' => true,
         ]);
+
+        $user->assignRole(User::ROLE_VIEWER);
 
         $token = $user->createToken('api-token')->plainTextToken;
 
