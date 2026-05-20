@@ -1,10 +1,26 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
-import { authAPI } from '@/services/api-client'
+import { authAPI, userAPI } from '@/services/api-client'
 
 export const useAuthStore = defineStore('auth', () => {
   const user = ref(null)
   const token = ref(localStorage.getItem('token'))
+
+  // If a token exists (e.g. after page reload), attempt to fetch the
+  // authenticated user's profile so `user` and `isAdmin` are available.
+  if (token.value) {
+    ;(async () => {
+      try {
+        const res = await userAPI.getProfile()
+        user.value = res.data
+      } catch (err) {
+        console.error('Failed to fetch profile on load:', err)
+        // If token invalid, clear it
+        token.value = null
+        localStorage.removeItem('token')
+      }
+    })()
+  }
 
   const isAuthenticated = computed(() => !!token.value)
   const isAdmin = computed(() => user.value?.role === 'admin')
